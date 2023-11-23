@@ -130,7 +130,7 @@ def build_block_list(title_strings, paper_strings):
     """
     builds a list of slack-bot blocks from a list of markdown formatted papers
     """
-    slack_block_list = [
+    slack_main_msg = [
         {
             "type": "header",
             "text": {
@@ -143,27 +143,20 @@ def build_block_list(title_strings, paper_strings):
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": "Total relevant papers (max 50 in thread): "
+                "text": "Total relevant papers (max 100 in thread): "
                 + str(len(title_strings))
-                + "\n Top 10 titles shown below",
             },
-        },
-        {"type": "divider"},
+        }
     ]
 
-    for paper in title_strings[:10]:
-        slack_block_list.append(
-            {"type": "section", "text": {"type": "mrkdwn", "text": paper}}
-        )
-
     thread_blocks = []
-    for paper in paper_strings[:50]:
+    for paper in paper_strings[:100]:
         thread_blocks.append(
             {"type": "section", "text": {"type": "mrkdwn", "text": paper}}
         )
         thread_blocks.append({"type": "divider"})
 
-    return slack_block_list, thread_blocks
+    return slack_main_msg, thread_blocks
 
 
 def push_to_slack(papers_dict):
@@ -178,9 +171,9 @@ def push_to_slack(papers_dict):
     paper_strings = [
         render_paper(paper, i) for i, paper in enumerate(papers_dict.values())
     ]
-    blocks, thread_blocks = build_block_list(title_strings, paper_strings)
+    main_msg, thread_blocks = build_block_list(title_strings, paper_strings)
     # push to slack
-    ts = send_main_message(blocks, channel_id, client)
+    ts = send_main_message(main_msg, channel_id, client)
     send_thread(thread_blocks, channel_id, ts, client)
 
 
