@@ -1,4 +1,6 @@
- 1. Papers about explanations, including natural language explanations and other forms of explanations.  
+ 1. Insightful papers about explanations, including natural language explanations and other forms of explanations.
+   - Relevant: I am especially interested in the papers contextualizing the explanations and those showing the utilities of explanations. For example, those showing that explanations can make the systems more safe and trustworthy.  
+   - Not relevant: Simple applications of existing explanation techniques to existing datasets.  
  2. Papers making significant contributions in alignment.  
    - Relevant: theoretical and novel empirical algorithms, and papers adopting novel evaluation approaches for alignments.  
    - Not relevant: papers only applying alignment to existing applications.
@@ -8,12 +10,12 @@
  4. Describes new paradigms to evaluating open-ended text generation. Evaluating the outputs of language models is hard, especially in open-ended settings like for chatbots.
     - Relevant: papers that fundamentally rethink language model evaluation -- especially by accounting for subjectivity or using adversaries.
     - Not relevant: specific evaluations for specific tasks, identifying new properties or flaws of language models, or simply collecting new data.
- 5. Conducts surveys or provides data into real-world usage and safety properties of language models.
+ 5. Papers about the safety of language models.
     - Relevant: papers that create new datasets or surveys on real-world usage of language models.
     - Not relevant: papers that apply language models to new real-world tasks.
- 6. Studies 'scaling laws' in the context of neural networks. Scaling laws refer to the very clear power-law relationship between the size or computational power used to train a model and the performance of that model.
-    - Relevant: theoretical or conceptual explanation behind scaling laws for language models.
-    - Not relevant: papers that have experiments at different model scales (but do not explicitly fit a scaling law) or papers that mention scaling laws, but the scaling laws are not the central subject of the paper
+ 6. Papers making impressive contributions about the decision-making abilities of foundational models.  
+   - Relevant: Papers exploring new application scenarios of foundational models and assessing these models' range of applications. Papers presenting theoretical and empirical advance in leveraging the agency of these models, including language models and beyond. Papers showing how these models collaborate with humans.  
+   - Not relevant: papers that do not involve high-stake decision making scenarios, or papers that are not remotely relevant to humans.  
 
  In suggesting papers to your friend, remember that he enjoys papers that are helpful for understanding and controlling AI models, especially natural language processing models.
  Your friend also likes learning about surprising empirical results in language models, as well as clever machine learning tricks.
