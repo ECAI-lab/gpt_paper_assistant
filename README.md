@@ -26,8 +26,9 @@ At this point your bot should run daily and publish a static website. You can te
 
 6. [Set up a slack bot](https://api.slack.com/start/quickstart), get the OAuth key, set it to `SLACK_KEY` as a github secret
 7. Make a channel for the bot (and invite it to the channel), get its [Slack channel id](https://stackoverflow.com/questions/40940327/what-is-the-simplest-way-to-find-a-slack-team-id-and-a-channel-id), set it as `SLACK_CHANNEL_ID` in a github secret.
-8. Take a look at `configs/config.ini` to tweak how things are filtered.
-9. Set the github repo private to avoid github actions being [set to inactive after 60 days](https://docs.github.com/en/actions/using-workflows/disabling-and-enabling-a-workflow)
+8. Send the markdown files to your email. You need to set `SENDER_EMAIL`, `SENDER_PWD` and `SMTP_SERVER` as github secrets.  
+9. Take a look at `configs/config.ini` to tweak how things are filtered.
+10. Set the github repo private to avoid github actions being [set to inactive after 60 days](https://docs.github.com/en/actions/using-workflows/disabling-and-enabling-a-workflow)
 
 Each day at 1pm UTC, the bot will run and post to slack and publish a github pages website (see the publish_md and cron_runs actions for details).
 
@@ -35,7 +36,7 @@ Each day at 1pm UTC, the bot will run and post to slack and publish a github pag
 
 The steps are generally the same as above, but you have to set up the environment via `requirements.txt`
 
-Instead of passing credentials via github secrets, you have to set environment variables `OAI_KEY`, `SLACK_KEY`, `SLACK_CHANNEL_ID`.
+Instead of passing credentials via github secrets, you have to set environment variables `OAI_KEY`, `SLACK_KEY`, `SLACK_CHANNEL_ID`, `SENDER_EMAIL`, `SENDER_PWD`, `SMTP_SERVER`.
 
 To run everything, just call `main.py`
 
