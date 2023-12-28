@@ -10,9 +10,9 @@
  4. Describes new paradigms to evaluating open-ended text generation. Evaluating the outputs of language models is hard, especially in open-ended settings like for chatbots.
     - Relevant: papers that fundamentally rethink language model evaluation -- especially by accounting for subjectivity or using adversaries.
     - Not relevant: specific evaluations for specific tasks, identifying new properties or flaws of language models, or simply collecting new data.
- 5. Papers about the safety of language models.
-    - Relevant: papers that create new datasets or surveys on real-world usage of language models.
-    - Not relevant: papers that apply language models to new real-world tasks.
+ 5. Papers about the safety of AI.
+    - Relevant: Papers that create new datasets or surveys on real-world usage of AI, including LLMs and beyond. Papers that extensively discuss how AIs can impose threats to humans, including but not limited to propagating fake news and persuading. Papers making significant advance in limiting hallucinations and privacy issues are also relevant.  
+    - Not relevant: papers that apply language models to simple tasks.  
  6. Papers making impressive contributions about the decision-making abilities of foundational models.  
    - Relevant: Papers exploring new application scenarios of foundational models and assessing these models' range of applications. Papers presenting theoretical and empirical advance in leveraging the agency of these models, including language models and beyond. Papers showing how these models collaborate with humans.  
    - Not relevant: papers that do not involve high-stake decision making scenarios, or papers that are not remotely relevant to humans.  
