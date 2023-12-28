@@ -76,7 +76,7 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[P
     feed = feedparser.parse(
         f"http://export.arxiv.org/rss/{area}", modified=updated_string
     )
-    if feed.status == 304:
+    if feed.status == 304 or len(feed.entries) == 0:
         if (config is not None) and config["OUTPUT"]["debug_messages"]:
             print("No new papers since " + updated_string + " for " + area)
         # if there are no new papers return an empty list
