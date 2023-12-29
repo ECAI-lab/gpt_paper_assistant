@@ -113,7 +113,7 @@ def run_and_parse_chatgpt(full_prompt, openai_client, config):
         )
         new_dict = {
             "ARXIVID": json_list[0]["ARXIVID"],
-            "COMMENT": json_list[0]["COMMENT"],
+            "COMMENT": json_list[0].get("COMMENT"),
             "RELEVANCE": rel_score,
             "NOVELTY": nov_score,
         }
