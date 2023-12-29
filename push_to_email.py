@@ -16,7 +16,7 @@ def push_to_email(recipient_email, markdown_content):
     message = MIMEMultipart()
     message['From'] = sender_email
     message['To'] = recipient_email
-    message['Subject'] = "Example HTML Email"
+    message['Subject'] = "Arxiv bot papers of today"
 
     html_content = markdown.markdown(markdown_content)
 
