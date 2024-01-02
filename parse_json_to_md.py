@@ -18,7 +18,7 @@ def render_paper(paper_entry: dict, idx: int) -> str:
     abstract = paper_entry["abstract"]
     # get the authors
     authors = paper_entry["authors"]
-    paper_string = f'<h2>{idx}. <a id="link{idx} href="{arxiv_url}"></a></h2>\n'
+    paper_string = f'<h2 id="link{idx}">{idx}. <a href="{arxiv_url}">{title}</a></h2>\n\n'
     paper_string += f"**ArXiv ID:** {arxiv_id}\n"
     paper_string += f'**Authors:** {", ".join(authors)}\n\n'
     paper_string += f"**Abstract:** {abstract}\n\n"
