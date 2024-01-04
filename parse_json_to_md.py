@@ -56,13 +56,13 @@ def render_md_string(papers_dict):
         + "Table of contents with paper titles:\n\n"
     )
     title_strings = [
-        render_title_and_author(paper, i)
+        render_title_and_author(paper, i+1)
         for i, paper in enumerate(papers_dict.values())
     ]
     output_string = output_string + "\n".join(title_strings) + "\n---\n"
     # render each paper
     paper_strings = [
-        render_paper(paper, i) for i, paper in enumerate(papers_dict.values())
+        render_paper(paper, i+1) for i, paper in enumerate(papers_dict.values())
     ]
     # join all papers into one string
     output_string = output_string + "\n".join(paper_strings)
