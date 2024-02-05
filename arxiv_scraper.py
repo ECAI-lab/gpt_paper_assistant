@@ -84,7 +84,7 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[P
     # get the list of entries
     entries = feed.entries
     timestamp = datetime.strptime(
-        feed.headers["last-modified"], "%a, %d %b %Y %H:%M:%S GMT"
+        feed.headers["date"], "%a, %d %b %Y %H:%M:%S GMT"
     )
     # ugly hack: this should be the very oldest paper in the RSS feed that was not put on hold.
     # if ArXiv changes their RSS announcement format this line will break, but we have no other way of getting this info
@@ -95,8 +95,9 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[P
         if ("UPDATED" in paper.title) or ("CROSS LISTED" in paper.title):
             continue
         # extract area
-        paper_area = re.findall("\[.*\]", paper.title)[0]
-        if (f'[{area}]' != paper_area) and (config["FILTERING"].getboolean("force_primary")):
+        paper_area = [tag["term"] for tag in paper["tags"]]
+        
+        if (area != paper_area[0]) and (config["FILTERING"].getboolean("force_primary")):
             continue
         # otherwise make a new paper, for the author field make sure to strip the HTML tags
         authors = [
@@ -136,6 +137,10 @@ def get_papers_from_arxiv_rss_api(area: str, config: Optional[dict]) -> List[Pap
 
 
 if __name__ == "__main__":
-    paper_list = get_papers_from_arxiv_rss("math.AC", None)
+    import configparser 
+    config = configparser.ConfigParser()
+    config.read('configs/config.ini')
+
+    paper_list = get_papers_from_arxiv_rss("cs.CL", config)
     print(paper_list)
     print("success")
