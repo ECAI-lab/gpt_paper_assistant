@@ -88,7 +88,9 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[P
     )
     # ugly hack: this should be the very oldest paper in the RSS feed that was not put on hold.
     # if ArXiv changes their RSS announcement format this line will break, but we have no other way of getting this info
-    last_id = feed.entries[0].id.split("/")[-1]
+    last_id = feed.entries[0].id.split(":")[-1]
+    if last_id.find("v") != -1:
+        last_id = last_id[:last_id.index("v")]
     paper_list = []
     for paper in entries:
         # ignore updated papers
@@ -141,6 +143,9 @@ if __name__ == "__main__":
     config = configparser.ConfigParser()
     config.read('configs/config.ini')
 
-    paper_list = get_papers_from_arxiv_rss("cs.CL", config)
-    print(paper_list)
-    print("success")
+    #paper_list = get_papers_from_arxiv_rss("cs.ML", config)
+    #print(paper_list)
+    #print("get_papers_from_arxiv_rss success")
+
+    paper_list = get_papers_from_arxiv_rss_api("cs.ML", config)
+    print("Scraped {} papers successfully.".format(len(paper_list)))
