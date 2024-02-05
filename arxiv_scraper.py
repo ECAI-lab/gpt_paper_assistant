@@ -94,7 +94,7 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[P
     paper_list = []
     for paper in entries:
         # ignore updated papers
-        if ("UPDATED" in paper.title) or ("CROSS LISTED" in paper.title):
+        if "v" in paper.id:
             continue
         # extract area
         paper_area = [tag["term"] for tag in paper["tags"]]
@@ -112,7 +112,7 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[P
         # strip the last pair of parentehses containing (arXiv:xxxx.xxxxx [area.XX])
         title = re.sub("\(arXiv:[0-9]+\.[0-9]+v[0-9]+ \[.*\]\)$", "", paper.title)
         # remove the link part of the id
-        id = paper.id.split("/")[-1]
+        id = paper.id.split(":")[-1]
         # make a new paper
         new_paper = Paper(authors=authors, title=title, abstract=summary, arxiv_id=id)
         paper_list.append(new_paper)
@@ -147,5 +147,5 @@ if __name__ == "__main__":
     #print(paper_list)
     #print("get_papers_from_arxiv_rss success")
 
-    paper_list = get_papers_from_arxiv_rss_api("cs.ML", config)
+    paper_list = get_papers_from_arxiv_rss_api("cs.CL", config)
     print("Scraped {} papers successfully.".format(len(paper_list)))
