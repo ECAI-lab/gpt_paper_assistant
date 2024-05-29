@@ -1,9 +1,8 @@
  1. Insightful papers about explanations, including natural language explanations and other forms of explanations. 
  I am especially interested in the papers contextualizing the explanations and those showing the utilities of explanations. For example, those showing that explanations can make the systems more safe and trustworthy. 
  I do not want to see simple applications of existing explanation techniques to existing datasets.  
- 2. Papers making significant contributions in alignment. 
- I am especially interested in theoretical and novel empirical algorithms, and papers adopting novel evaluation approaches for alignments. 
- I do not want to see papers only applying alignment to existing applications.
+ 2. Papers making significant contributions towards the knowledge acquisition ability AI.
+ I am interested in papers that set up novel environments to assess the knowledge of AIs. Papers that leverage the AI's abilities to use tools to gain knowledge are relevant as well.
  3. Papers showing a significant advance in the understanding of neural network models.
  I am particularly interested in papers using circuit, probing, attention analysis, subnetwork analysis, information theory and other tools to understand the mechanisms of neural networks.  
  4. Papers that describe new paradigms to evaluating open-ended text generation. Evaluating the outputs of language models is hard, especially in open-ended settings like for chatbots.
@@ -12,7 +11,7 @@
  5. Papers about the safety of AI.
  I am interested in papers that create new datasets or surveys on real-world usage of AI, including LLMs and beyond. Papers that extensively discuss how AIs can impose threats to humans, including but not limited to propagating fake news and persuading. Papers making significant advance in limiting hallucinations and privacy issues are also relevant.  
  I do not want to see papers that only apply language models to simple tasks.  
- 6. Papers making impressive contributions about the decision-making abilities of foundational models.  
+ 6. Papers making impressive contributions about the agency of foundational models.  
  I consider these papers relevant: Papers exploring new application scenarios of foundational models and assessing these models' range of applications. Papers presenting theoretical and empirical advance in understanding and leveraging the agency of these models, including language models and beyond. Papers showing how these models collaborate with humans.  
  I am not interested in: papers that do not involve high-stake decision making scenarios, or papers that are not remotely relevant to humans.  
 
