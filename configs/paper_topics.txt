@@ -4,10 +4,8 @@
  2. Papers making significant contributions towards the knowledge acquisition ability AI.
  I am interested in papers that set up novel environments to assess the knowledge of AIs. Papers that leverage the AI's abilities to use tools to gain knowledge are relevant as well.
  3. Papers showing a significant advance in the understanding of neural network models.
- I am particularly interested in papers using circuit, probing, attention analysis, subnetwork analysis, information theory and other tools to understand the mechanisms of neural networks.  
- 4. Papers that describe new paradigms to evaluating open-ended text generation. Evaluating the outputs of language models is hard, especially in open-ended settings like for chatbots.
- I appreciate the papers that fundamentally rethink language model evaluation -- especially by accounting for subjectivity or using adversaries.
- I don't like simple papers doing just specific evaluations for specific tasks, identifying new properties or flaws of language models, or simply collecting new data.
+ I am broadly interested in papers using circuit, probing, attention analysis, subnetwork analysis, influence function and other tools to understand the mechanisms of neural networks.  
+ 4. Papers that advance the frontiers of privacy and copyright protection of language models. Machine unlearning is also relevant.
  5. Papers about the safety of AI.
  I am interested in papers that create new datasets or surveys on real-world usage of AI, including LLMs and beyond. Papers that extensively discuss how AIs can impose threats to humans, including but not limited to propagating fake news and persuading. Papers making significant advance in limiting hallucinations and privacy issues are also relevant.  
  I do not want to see papers that only apply language models to simple tasks.  
