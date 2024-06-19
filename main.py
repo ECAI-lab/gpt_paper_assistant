@@ -143,8 +143,12 @@ def get_authors(
             auth_map = get_one_author(session, author, S2_API_KEY)
             if auth_map is not None:
                 author_metadata_dict[author] = auth_map
-            # add a 10ms wait time to avoid rate limiting
-            time.sleep(0.01)
+            # add a 20ms wait time to avoid rate limiting
+            # otherwise, semantic scholar aggressively rate limits, so do 1s
+            if S2_API_KEY is not None:
+                time.sleep(0.02)
+            else:
+                time.sleep(1.0)
     return author_metadata_dict
 
 
