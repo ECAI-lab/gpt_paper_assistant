@@ -143,7 +143,7 @@ def build_block_list(title_strings, paper_strings):
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": "Total relevant papers (max 100 in thread): "
+                "text": "Total relevant papers (max 50 in thread): "
                 + str(len(title_strings))
             },
         }

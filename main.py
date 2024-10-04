@@ -237,6 +237,7 @@ if __name__ == "__main__":
     keys = list(sort_dict.keys())
     values = list(sort_dict.values())
     sorted_keys = [keys[idx] for idx in argsort(values)[::-1]]
+    sorted_keys = sorted_keys[:min(len(sorted_keys), config["FILTERING"]["max_papers_per_day"])]
     selected_papers = {key: selected_papers[key] for key in sorted_keys}
     if config["OUTPUT"].getboolean("debug_messages"):
         print(sort_dict)
