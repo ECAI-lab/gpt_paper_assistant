@@ -78,7 +78,7 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[P
     )
     if feed.status == 304 or len(feed.entries) == 0:
         if (config is not None) and config["OUTPUT"]["debug_messages"]:
-            print("No new papers since " + updated_string + " for " + area)
+            print("No new papers from RSS since " + updated_string + " for " + area)
         # if there are no new papers return an empty list
         return [], None, None
     # get the list of entries
@@ -133,6 +133,7 @@ def get_papers_from_arxiv_rss_api(area: str, config: Optional[dict]) -> List[Pap
     paper_list, timestamp, last_id = get_papers_from_arxiv_rss(area, config)
     if timestamp is None:
         return []
+    time.sleep(3)  # Rate limit to one operation per 3 seconds
     api_paper_list = get_papers_from_arxiv_api(area, timestamp, last_id)
     merged_paper_list = merge_paper_list(paper_list, api_paper_list)
     return merged_paper_list
@@ -143,9 +144,6 @@ if __name__ == "__main__":
     config = configparser.ConfigParser()
     config.read('configs/config.ini')
 
-    #paper_list = get_papers_from_arxiv_rss("cs.ML", config)
-    #print(paper_list)
-    #print("get_papers_from_arxiv_rss success")
-
-    paper_list = get_papers_from_arxiv_rss_api("cs.CL", config)
-    print("Scraped {} papers successfully.".format(len(paper_list)))
+    for area in ["cs.ML", "cs.AI", "cs.CL", "cs.IR"]: 
+        paper_list = get_papers_from_arxiv_rss_api(area, config)
+        print("Scraped {} papers in area {}.".format(len(paper_list), area))
