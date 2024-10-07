@@ -6,9 +6,8 @@
  3. Papers showing a significant advance in the understanding the mechanisms of neural network models.
  I am broadly interested in papers using circuit, probing, attention analysis, subnetwork analysis, influence function and other methods to understand the mechanisms of neural networks (especially how the netowrks can generalize across domains).  
  4. Papers that advance the frontiers of privacy and copyright protection of language models. Machine unlearning is also relevant.
- 5. Papers about the safety of AI.
- I am interested in papers that create new datasets or surveys on real-world usage of AI, including LLMs and beyond. Papers that extensively discuss how AIs can impose threats to humans, including but not limited to propagating fake news and persuading in malicious manners. Papers making significant advance in limiting hallucinations and privacy issues are also relevant.  
- I do not want to see papers that only apply language models to simple tasks.  
+ 5. Papers about the security of AI.
+ I am interested in papers that create new datasets or surveys on real-world usage of AI, including LLMs and beyond. Papers that extensively discuss how AIs can impose threats to humans (and how we can defend against these threats), including but not limited to propagating fake news, infringing privacy, and persuading in malicious manners. Papers making significant advance in limiting hallucinations and verification is also relevant.  
  6. Papers making impressive contributions about the agency of foundational models.  
  I consider these papers relevant: Papers exploring new scenarios of foundational models and leveraging these models' decision-making capabilities. Papers presenting theoretical and empirical advance in understanding and leveraging the agency of these models, including language models and beyond. Papers showing how these models collaborate with humans.  
  I am not interested in: papers that are not remotely relevant to humans.  
