@@ -5,6 +5,7 @@ from html import unescape
 from typing import List, Optional, Tuple
 import re
 import arxiv
+import time
 
 import feedparser
 from dataclasses import dataclass
