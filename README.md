@@ -1,6 +1,6 @@
-# GPT4 paper assistant: A daily ArXiv scanner
+# LLM paper assistant: A daily ArXiv scanner
 
-This repo implements a very simple daily scanner for Arxiv that uses GPT4 and author matches to find papers you might find interesting. 
+This repo implements a very simple daily scanner for Arxiv that uses LLM and author matches to find papers you might find interesting. 
 It will run daily via github actions and can post this information to slack via a bot or just render it in a static github-pages website.
 
 A simple demo of the daily papers can be seen [here](https://tatsu-lab.github.io/gpt_paper_assistant/) running on `cs.CL`
