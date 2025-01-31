@@ -56,13 +56,15 @@ def filter_papers_by_hindex(all_authors, papers, config):
 
 def calc_price(model, usage):
     if model == "gpt-4o":
-        return (0.005 * usage.prompt_tokens + 0.015 * usage.completion_tokens) / 1000.0
-    if model == "gpt-4-1106-preview":
-        return (0.01 * usage.prompt_tokens + 0.03 * usage.completion_tokens) / 1000.0
-    if model == "gpt-4":
-        return (0.03 * usage.prompt_tokens + 0.06 * usage.completion_tokens) / 1000.0
-    if (model == "gpt-3.5-turbo") or (model == "gpt-3.5-turbo-1106"):
-        return (0.0015 * usage.prompt_tokens + 0.002 * usage.completion_tokens) / 1000.0
+        return (2.5 * usage.prompt_tokens + 10 * usage.completion_tokens) / 1000000.0
+    elif model == "o1":
+        return (15 * usage.prompt_tokens + 60 * usage.completion_tokens) / 1000000.0
+    elif model == "deepseek-chat":
+        return (0.14 * usage.prompt_tokens + 0.28 * usage.completion_tokens) / 1000000.0
+    elif model == "deepseek-reasoner":
+        return (0.55 * usage.prompt_tokens + 2.19 * usage.completion_tokens) / 1000000.0
+    else:
+        return 0.0
     
 
 @retry.retry(tries=3, delay=2)
