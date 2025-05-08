@@ -1,17 +1,19 @@
- 1. Insightful papers about explanations, including natural language explanations and other forms of explanations. 
- I am especially interested in the papers contextualizing the explanations and those showing the utilities of explanations. For example, those showing that explanations can make the systems more safe and trustworthy. 
+ 1. Insightful papers that explain the mechanisms of neural networks, including papers using circuit, probing, attention analysis, subnetwork analysis, influence function and other methods to understand the mechanisms of neural networks (especially how the netowrks can generalize across domains). 
+ I'm interested in the explanation formats including natural language explanations and other forms of explanations. I am especially interested in the papers contextualizing the explanations and those showing the utilities of explanations. For example, those showing that explanations can make the systems more safe and trustworthy. 
  I do not want to see simple applications of existing explanation techniques to existing datasets.  
- 2. Papers making significant contributions towards the knowledge acquisition ability AI.
+ 
+ 2. Papers making significant contributions towards the agency, AI for scientific research, and the introspection capability of AIs.
  I am interested in papers that set up novel environments to assess the knowledge of AIs. Papers that leverage the AI's abilities to use tools to gain knowledge are relevant as well.
- 3. Papers showing a significant advance in the understanding the mechanisms of neural network models.
- I am broadly interested in papers using circuit, probing, attention analysis, subnetwork analysis, influence function and other methods to understand the mechanisms of neural networks (especially how the netowrks can generalize across domains).  
- 4. Papers that advance the frontiers of privacy and copyright protection of language models. Machine unlearning is also relevant.
- 5. Papers about the security of AI.
- I am interested in papers that create new datasets or surveys on real-world usage of AI, including LLMs and beyond. Papers that extensively discuss how AIs can impose threats to humans (and how we can defend against these threats), including but not limited to propagating fake news, infringing privacy, and persuading in malicious manners. Papers making significant advance in limiting hallucinations and verification is also relevant.  
- 6. Papers making impressive contributions about the agency of foundational models.  
- I consider these papers relevant: Papers exploring new scenarios of foundational models and leveraging these models' decision-making capabilities. Papers presenting theoretical and empirical advance in understanding and leveraging the agency of these models, including language models and beyond. Papers showing how these models collaborate with humans.  
- I am not interested in: papers that are not remotely relevant to humans.  
+ 
+ 3. Papers about the security of AI.
+ I am interested in papers that discuss how AIs can impose threats to humans (and how we can defend against these threats), including but not limited to membership inference attack, data poisoning attack, hallucinations, misinformation, infringing privacy, and persuading in malicious manners. Papers that advance the frontiers of privacy and copyright protection of language models. Machine unlearning is also relevant.   
 
+ 4. Papers making impressive contributions about the agency of foundational models.  
+ I consider these papers relevant: Papers exploring new scenarios of foundational models and leveraging these models' decision-making capabilities. Papers presenting theoretical and empirical advance in understanding and leveraging the agency of these models, including language models and beyond. Papers showing how these models collaborate with humans.  
+ 
+ 5. Papers about efficient AI.
+ I am interested in papers advancing technologies in pruning, quantization, and other acceleration of both the training and the inferencing of AI models, including language models and beyond.
+ 
  In suggesting papers to your friend, remember that he enjoys papers that are helpful for understanding and controlling AI models, especially natural language processing models.
  Your friend also likes learning about surprising empirical results in language models, as well as clever machine learning tricks.
  He does not want to read papers that are about primarily applications of methods to specific domains.
