@@ -90,6 +90,7 @@ def run_and_parse_chatgpt(full_prompt, openai_client, config):
     for choice in completion.choices:
         out_text = choice.message.content
         out_text = re.sub("```jsonl\n", "", out_text)
+        out_text = re.sub("```json\n", "", out_text)
         out_text = re.sub("```", "", out_text)
         out_text = re.sub(r"\n+", "\n", out_text)
         out_text = re.sub("},", "}", out_text).strip()
@@ -267,7 +268,7 @@ if __name__ == "__main__":
     config.read("configs/config.ini")
     S2_API_KEY = os.environ.get("S2_KEY")
     OAI_KEY = os.environ.get("OAI_KEY")
-    openai_client = OpenAI(api_key=OAI_KEY)
+    openai_client = OpenAI(api_key=OAI_KEY, base_url="https://api.deepseek.com")
     # deal with config parsing
     with open("configs/base_prompt.txt", "r") as f:
         base_prompt = f.read()
@@ -276,8 +277,8 @@ if __name__ == "__main__":
     with open("configs/postfix_prompt.txt", "r") as f:
         postfix_prompt = f.read()
     # loads papers from 'in/debug_papers.json' and filters them
-    # with open("in/debug_papers.json", "r") as f:
-    with open("in/gpt_paper_batches.debug-11-14.json", "r") as f:
+    with open("in/debug_papers.json", "r") as f:
+        # with open("in/gpt_paper_batches.debug-11-14.json", "r") as f:
         paper_list_in_dict = json.load(f)
     papers = [
         [
