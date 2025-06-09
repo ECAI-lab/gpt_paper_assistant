@@ -1,6 +1,6 @@
 import dataclasses
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, UTC
 from html import unescape
 from typing import List, Optional, Tuple
 import re
@@ -71,11 +71,11 @@ def get_papers_from_arxiv_api(area: str, timestamp, last_id) -> List[Paper]:
 
 def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> Tuple[List[Paper], datetime, str]:
     # get the feed from http://export.arxiv.org/rss/ and use the updated timestamp to avoid duplicates
-    updated = datetime.utcnow() - timedelta(days=1)
+    updated = datetime.now(UTC) - timedelta(days=1)
     # format this into the string format 'Fri, 03 Nov 2023 00:30:00 GMT'
     updated_string = updated.strftime("%a, %d %b %Y %H:%M:%S GMT")
     feed = feedparser.parse(
-        f"http://export.arxiv.org/rss/{area}", modified=updated_string
+        f"http://rss.arxiv.org/rss/{area}", modified=updated_string
     )
     if feed.status == 304 or len(feed.entries) == 0:
         if (config is not None) and config["OUTPUT"]["debug_messages"]:
