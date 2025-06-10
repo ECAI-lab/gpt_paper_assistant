@@ -134,6 +134,10 @@ def merge_paper_list(paper_list, api_paper_list):
 
 def get_papers_from_arxiv_rss_api(area: str, config: Optional[dict]) -> List[Paper]:
     paper_list, timestamp, last_id = get_papers_from_arxiv_rss(area, config)
+    # if timestamp is None:
+    #     return []
+    # api_paper_list = get_papers_from_arxiv_api(area, timestamp, last_id)
+    # merged_paper_list = merge_paper_list(paper_list, api_paper_list)
     return paper_list
 
 
