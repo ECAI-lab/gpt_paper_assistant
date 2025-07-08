@@ -110,8 +110,9 @@ def get_papers_from_arxiv_rss(area: str, config: Optional[dict]) -> List[Paper]:
             for author in paper.author.split(",")
         ]
         # strip html tags from summary
-        summary = re.sub("<[^<]+?>", "", paper.summary)
-        summary = unescape(re.sub("\n", " ", summary))
+        summary = paper.summary.split("\n")[1]
+        if summary.startswith("Abstract: "):
+            summary = summary[len("Abstract: "):]
         # strip the last pair of parentehses containing (arXiv:xxxx.xxxxx [area.XX])
         title = re.sub("\(arXiv:[0-9]+\.[0-9]+v[0-9]+ \[.*\]\)$", "", paper.title)
         # remove the link part of the id
