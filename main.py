@@ -147,9 +147,9 @@ def get_authors(
             # add a wait time to avoid rate limiting
             # otherwise, semantic scholar aggressively rate limits, so do 1s
             if S2_API_KEY is not None:
-                time.sleep(0.02)
-            else:
                 time.sleep(1.0)
+            else:
+                time.sleep(3.0)
     return author_metadata_dict
 
 
